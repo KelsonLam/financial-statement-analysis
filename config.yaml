@@ -1,0 +1,11 @@
+# Default configuration for the financial statement analysis.
+
+ticker: "AAPL"     # the company to analyze (any ticker yfinance covers)
+
+# Thresholds used to flag risks. These are rules of thumb, not hard rules, and
+# sensible ranges differ a lot by industry.
+thresholds:
+  min_current_ratio: 1.0       # below this, short-term liquidity looks tight
+  max_debt_to_equity: 2.0      # above this, the balance sheet looks heavily levered
+  min_interest_coverage: 3.0   # below this, operating income barely covers interest
+  min_net_margin: 0.0          # negative means the company is unprofitable
