@@ -97,6 +97,23 @@ hand-computed values, confirms free cash flow is operating cash flow plus capex,
 checks the CAGR formula, and confirms the risk flags fire on a weak company and
 stay quiet on a healthy one.
 
+## DuPont decomposition
+
+Return on equity hides three different stories. `dupont.py` splits it into the
+parts that drive it:
+
+```
+ROE = net margin x asset turnover x equity multiplier
+```
+
+```python
+from finstmt.dupont import dupont
+dupont(statements)   # net_margin, asset_turnover, equity_multiplier, roe by year
+```
+
+A high ROE driven mostly by the equity multiplier is a quieter way of saying the
+return is borrowed.
+
 ## Project layout
 
 ```
